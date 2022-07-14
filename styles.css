@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Rubik&display=swap');
+
+/* Global Variables */
+html, body, a {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+}
+
+/* Skip Navigation */
+p.skipnavigation {
+    float: right;
+}
+p.skipnavigation a {
+    position: absolute;
+    left: -10000px;
+    color: black;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+p.skipnavigation a:focus {
+    top: 0.4em;
+    left: auto;
+    right: 0.4em;
+    z-index: 2;
+    float: left;
+}
+
+/* Main Section */
+section.main {
+    text-align: center;
+}
+img#main_picture {
+    width: 40%;
+    animation-name: threesixtydegree;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+img#main_picture:hover {
+    animation-name: backtocenter;
+    animation-timing-function: linear;
+    /*animation-play-state: paused;*/
+}
+@keyframes threesixtydegree {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes backtocenter {
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.main p {
+    font-size: 40px;
+    margin: 2%;
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+}
+.devicesizewarning {
+    display: none;
+    text-align: center;
+    background-color: lightcoral;
+    color: white;
+    margin: 0;
+    padding: 2%;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1870px) {
+    img#main_picture {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 1400px) {
+    img#main_picture {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    img#main_picture {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 728px) {
+    img#main_picture {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 305px) {
+    img#main_picture {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 249px) {
+    img#main_picture {
+        width: 100%;
+    }
+    .devicesizewarning {
+        display: block;
+        width: 100%;
+    }
+}
