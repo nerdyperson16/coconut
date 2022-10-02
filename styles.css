@@ -54,7 +54,7 @@ img#main_picture:hover {
         transform: rotate(0deg);
     }
 }
-.main p {
+.main .pop {
     font-size: 40px;
     margin: 2%;
     font-family: 'Comic Neue', cursive;
@@ -70,10 +70,67 @@ img#main_picture:hover {
     width: 100%;
 }
 
+/* Popup Text */
+span.popuptxt {
+    font-size: 13px;
+    font-style: italic;
+}
+.popuptxt {
+    position: relative;
+    display: inline-block;
+}
+.pop .popuptxt {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    right: 13%;
+    top: 15%;
+}
+.pop .popuptxt:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+.pop .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Responsive Design */
 @media screen and (max-width: 1870px) {
     img#main_picture {
         width: 40%;
+    }
+}
+@media screen and (max-width: 1195px) {
+    .pop .popuptxt {
+        right: 3%;
+        top: 15%;
     }
 }
 @media screen and (max-width: 1400px) {
@@ -85,10 +142,33 @@ img#main_picture:hover {
     img#main_picture {
         width: 70%;
     }
+    .pop .popuptxt {
+        right: 3%;
+        top: 10%;
+    }
+}
+@media screen and (max-width: 810px) {
+    .pop .popuptxt:after {
+        top: 100%;
+        left: 90%;
+    }
+    .pop .popuptxt {
+        width: 20%;
+        right: 75%;
+        top: 10%;
+    }
 }
 @media screen and (max-width: 728px) {
     img#main_picture {
         width: 100%;
+    }
+    .pop .popuptxt {
+        top: 5%;
+    }
+}
+@media screen and (max-width: 474px) {
+    .pop .popuptxt {
+        top: 1%;
     }
 }
 @media screen and (max-width: 305px) {
@@ -103,5 +183,8 @@ img#main_picture:hover {
     .devicesizewarning {
         display: block;
         width: 100%;
+    }
+    .pop .popuptxt {
+        display: none;
     }
 }

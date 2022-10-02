@@ -3,6 +3,8 @@
     Inspired by Papa.
     For the coconut and the lucky powers it gave us to our family! XD
     Made on 7/13/2022. I was bored so I made this website.
+
+    Revised and finalized on 10/2/2022.
 -->
 <!DOCTYPE html>
 <html>
@@ -14,17 +16,14 @@
     </head>
     <body>
         <script src="randomImage.js"></script>
+        <script src="popup.js"></script>
         <p class="skipnavigation"><a href="#">Skip Navigation</a></p>
-        <script type="text/javascript"> /*Integrated JavaScript for Internet Explorer users*/
-            var ua = window.navigator.userAgent;
-            var isIE = /MSIE|Trident/.test(ua);
-            if ( isIE ) {
-                document.write("You're currently using Internet Explorer which is an outdated browser currently. Some features may not be usable and will not be considered for repairs. Thank you and sorry for the inconvenience. Please check out Google Chrome, Mozilla Firefox, Microsoft Edge, etc. for newer browsers.")
-            }
-        </script>
+        <script src="deviceWarning.js"></script>
         <p class="devicesizewarning">This webpage will look better on a larger phone or computer. Try using another device.</p>
         <section class="main">
-            <p>I Am Coconut</p>
+            <div class="pop" onclick="popupFunction()">I Am Coconut
+                <span class="popuptxt" id="myPopup">Did you know: Coconuts typically have 3 eyes. This one has 2 eyes.</span>
+            </div>
             <br />
             <img id="main_picture" src="" alt="A Coconut">
         </section>
